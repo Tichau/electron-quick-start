@@ -4,7 +4,11 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "configure": "typings install",
+    "clean": "rm -rf dist/*",
+    "copy-html": "cp index.html dist/",
+    "build": "npm run clean && npm run copy-html && tsc",
+    "start": "npm run build && electron ./dist/main.js"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +21,8 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^1.4.1"
+    "electron": "^1.4.1",
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0"
   }
 }
