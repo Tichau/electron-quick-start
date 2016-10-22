@@ -6,11 +6,11 @@
   "scripts": {
     "configure": "typings install",
     "clean": "rm -rf dist/*",
-    "copy": "cp index.html dist/ && cp package.json dist/",
+    "copy": "cp src/index.html dist/ && cp src/package.json dist/",
     "build": "npm run clean && npm run copy && tsc",
     "start": "npm run build && electron ./dist/main.js",
-    "pack": "npm run build && electron-packager dist/ quick-start --out builds",
-    "pack-all": "npm run build && electron-packager dist/ quick-start --all --out builds"
+    "pack": "npm run build && electron-packager dist/ --out builds --overwrite",
+    "pack-all": "npm run build && electron-packager dist/ --all --out builds --overwrite"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
