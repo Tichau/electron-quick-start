@@ -1,4 +1,4 @@
-# electron-quick-start
+# electron-typescript-starter
 
 **Clone and run for a quick way to see an Electron in action.**
 
@@ -20,13 +20,19 @@ To clone and run this repository you'll need [Git](https://git-scm.com) and [Nod
 
 ```bash
 # Clone this repository
-git clone https://github.com/electron/electron-quick-start
+git clone https://github.com/Tichau/electron-typescript-starter
 # Go into the repository
-cd electron-quick-start
+cd electron-typescript-starter
 # Install dependencies and typings
 npm install && npm run configure 
 # Run the app
 npm start
+# Run the app and watch changes in files
+npm run watch
+# Package your electron application for you current plateform
+npm run pack
+# Package your electron application for all supported plateforms
+npm run pack-all
 ```
 
 Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest).

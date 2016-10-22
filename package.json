@@ -22,7 +22,7 @@
     "demo",
     "typescript"
   ],
-  "author": "GitHub",
+  "author": "AAllard",
   "license": "CC0-1.0",
   "devDependencies": {
     "concurrently": "^3.1.0",
