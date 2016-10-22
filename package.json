@@ -5,10 +5,11 @@
   "main": "main.js",
   "scripts": {
     "configure": "typings install",
-    "clean": "rm -rf dist/*",
-    "copy": "cp src/index.html dist/ && cp src/package.json dist/",
+    "clean": "rimraf dist/",
+    "copy": "cpx \"src/**/*.{html,json}\" dist/",
     "build": "npm run clean && npm run copy && tsc",
     "start": "npm run build && electron ./dist/main.js",
+    "watch": "npm run build && concurrently --kill-others \"electron ./dist/main.js\" \"tsc -w\" \"cpx \"src/**/*.{html,json}\" dist/ -w\"",
     "pack": "npm run build && electron-packager dist/ --out builds --overwrite",
     "pack-all": "npm run build && electron-packager dist/ --all --out builds --overwrite"
   },
@@ -24,8 +25,12 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
+    "concurrently": "^3.1.0",
+    "cpx": "^1.5.0",
     "electron": "^1.4.1",
     "electron-packager": "^8.1.0",
+    "electron-reload": "^1.0.2",
+    "rimraf": "^2.5.4",
     "typescript": "^2.0.3",
     "typings": "^1.4.0"
   }
