@@ -27,6 +27,12 @@ cd electron-quick-start
 npm install && npm run configure 
 # Run the app
 npm start
+# Run the app and watch changes in files
+npm run watch
+# Package your electron application for you current plateform
+npm run pack
+# Package your electron application for all supported plateforms
+npm run pack-all
 ```
 
 Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest).
