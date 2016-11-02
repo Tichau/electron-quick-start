@@ -1,5 +1,5 @@
-import { app, BrowserWindow } from 'electron';
 import { Application } from './Application';
+import { app } from 'electron';
 
 // Reload the electron app on file changes!
 require('electron-reload')(__dirname);
@@ -8,6 +8,6 @@ require('electron-reload')(__dirname);
 // be closed automatically when the JavaScript object is garbage collected.
 let application = new Application();
 
-app.on('ready', application.OnReady.bind(application))
+app.on('ready', application.OnReady.bind(application));
 app.on('activate', application.OnActivate.bind(application));
 app.on('window-all-closed', application.OnAllWindowsClosed.bind(application));
